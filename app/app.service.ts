@@ -4,11 +4,10 @@ import { TodoItem } from './todo.model'
 
 
 export class TodoService {
-    todoList: TodoItem[] = [];
+    todoList: Array<TodoItem> = [];
     
-    add(item: TodoItem) {
-        console.log('add');
-    }
+    add(item: TodoItem) {}
+    remove(id:number) {}
 }
 
 export class TodoServiceMock extends TodoService {
@@ -20,6 +19,11 @@ export class TodoServiceMock extends TodoService {
     }
 
     add(item: TodoItem) {
+        item.id = this.todoList.length + 1;
         this.todoList.push(item);
+    }
+
+    remove(id: number) {
+        console.log('removing at server');
     }
 }

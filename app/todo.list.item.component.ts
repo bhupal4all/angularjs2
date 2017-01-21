@@ -1,4 +1,5 @@
-import { Component, Input } from 'angular2/core'
+import { Component, Input, Output, EventEmitter } from 'angular2/core'
+
 
 import {TodoItem} from './todo.model'
 
@@ -6,15 +7,19 @@ import {TodoItem} from './todo.model'
     selector: 'todo-list-item',
     template: `
     <div>
-        <span>{{item.title}}</span>
-        <button type='submit'>[x]</button>
+        <span>{{item?.title}}</span>
+        <button type='submit' (click)='clicked()'>[x]</button>
     </div>
     `
 })
 export class ListItemComponet {
     @Input() item: TodoItem;
+    @Output() remove = new EventEmitter();
 
     constructor() {
-        console.log('list-item');
+    }
+
+    clicked() {
+        this.remove.emit(this.item.id);
     }
 }

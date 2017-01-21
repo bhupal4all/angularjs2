@@ -12,7 +12,7 @@ import { ListItemComponet } from './todo.list.item.component'
     <div>
         <ol>
             <li *ngFor='#item of todoList'>
-                <todo-list-item [item]="item">
+                <todo-list-item [item]="item" (remove)="removeItem($event)">
                 </todo-list-item>
             </li>
         </ol>
@@ -32,5 +32,10 @@ export class TodoListComponent {
     add() {
         this.service.add({ title: this.newTask });
         this.newTask = '';
+    }
+
+    removeItem(id: number) {
+        console.log('removing id'+id);
+        this.service.remove(id);
     }
 }
