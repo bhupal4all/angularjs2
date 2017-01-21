@@ -2,13 +2,13 @@
   "name": "angular2-quickstart",
   "version": "1.0.0",
   "scripts": {
-    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" ",    
+    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" ",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "lite": "lite-server",
     "typings": "typings",
-    "postinstall": "typings install" 
-  },  
+    "postinstall": "typings install"
+  },
   "license": "ISC",
   "dependencies": {
     "angular2": "2.0.0-beta.7",
@@ -22,6 +22,7 @@
   "devDependencies": {
     "concurrently": "^2.0.0",
     "lite-server": "^2.1.0",
-    "typescript": "^1.7.5"
+    "typescript": "^1.7.5",
+    "typings": "^2.1.0"
   }
 }
