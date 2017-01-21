@@ -1,7 +1,9 @@
-import { Component, provide } from 'angular2/core'
+import { Component, provide, Input } from 'angular2/core'
 
 import { TodoItem } from './todo.model'
 import { TodoService, TodoServiceMock } from './app.service'
+
+import { ListItemComponet } from './todo.list.item.component'
 
 @Component({
     selector: 'todo-list',
@@ -10,14 +12,15 @@ import { TodoService, TodoServiceMock } from './app.service'
     <div>
         <ol>
             <li *ngFor='#item of todoList'>
-                {{item.title}}
+                <todo-list-item [item]="item">
+                </todo-list-item>
             </li>
         </ol>
     </div>
     `,
-    providers:[ provide(TodoService, {useClass: TodoServiceMock }) ]
+    directives: [ListItemComponet],
+    providers: [provide(TodoService, { useClass: TodoServiceMock })]
 })
-
 export class TodoListComponent {
     todoList: TodoItem[] = [];
     newTask: string;
@@ -27,7 +30,7 @@ export class TodoListComponent {
     }
 
     add() {
-        this.service.add({title: this.newTask});
-        this.newTask='';
+        this.service.add({ title: this.newTask });
+        this.newTask = '';
     }
 }
