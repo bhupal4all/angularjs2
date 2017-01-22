@@ -1,0 +1,49 @@
+body {
+    font-family: Verdana,sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    border: 2px solid green;
+    border-radius: 5px;
+}
+
+div.container {
+    margin: 50px; 
+    max-height: 400px;
+}
+
+footer {
+    font-size: 10px;
+    border-top: 5px solid darkgray;
+    position: absolute;
+    right: 10;
+    bottom: 10px;
+    left: 10;
+    background-color: #efefef;
+    text-align: center;
+}
+
+p.one {
+    margin-left: inherit;
+}
+
+h1 {
+    border-bottom: 6px solid red;
+    background-color: lightgrey;
+    text-align: center;
+}
+
+input .text {
+    background-color: aliceblue;
+    padding: 5px 5px;
+}
+
+button .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
