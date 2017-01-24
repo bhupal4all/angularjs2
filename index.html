@@ -12,26 +12,27 @@
   <script src="node_modules/systemjs/dist/system.src.js"></script>
   <script src="node_modules/rxjs/bundles/Rx.js"></script>
   <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+  <script src="node_modules/angular2/bundles/router.dev.js"></script>
 
   <link rel="stylesheet" href="main.css">
 
   <!-- 2. Configure SystemJS -->
   <script>
-      System.config({
-        packages: {
-          app: {
-            format: 'register',
-            defaultExtension: 'js'
-          }
+    System.config({
+      packages: {
+        app: {
+          format: 'register',
+          defaultExtension: 'js'
         }
+      }
+    });
+    System.import('app/boot')
+      .then(function () {
+        console.log('appliaction is working')
+      }, function () {
+        console.error.bind(console)
       });
-      System.import('app/boot')
-        .then(function () {
-          console.log('appliaction is working')
-        }, function () {
-          console.error.bind(console)
-        });
-    </script>
+  </script>
 
 </head>
 
@@ -41,7 +42,9 @@
   <todo-app>Application is loading, please wait</todo-app>
 
   <footer>
-    <center><h3>This is Footer and Static</h3></center>
+    <center>
+      <h3>This is Footer and Static</h3>
+    </center>
   </footer>
 </body>
 

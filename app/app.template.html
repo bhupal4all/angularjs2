@@ -1,12 +1,15 @@
 <h1>{{title}}</h1>
 <div class="container">
+    <div class='nav-bar'>
+        <div class='table'>
+            <ul class='nav'>
+                <li><a class='active' [routerLink]="['List']">List</a></li>
+                <li><a [routerLink]="['Add']">Add New</a></li>
+            </ul>
+        </div>
+    </div>
+
     <p>{{description}}</p>
 
-    <!--<ul>
-        <li *ngFor="#task of todoList">
-            <span [innerText]='task'></span>
-            <button>x</button>
-        </li>
-    </ul>-->
-    <todo-list></todo-list>
+    <router-outlet></router-outlet>
 </div>

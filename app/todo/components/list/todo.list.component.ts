@@ -1,14 +1,13 @@
 import { Component, provide, Input } from 'angular2/core'
 
-import { TodoItem } from './todo.model'
-import { TodoService, TodoServiceMock } from './app.service'
+import { TodoItem } from './../../model/todo.model'
+import { TodoService, TodoServiceMock } from './../../service/todo.service'
 
-import { ListItemComponet } from './todo.list.item.component'
+import { ListItemComponet } from './../list-item/todo.list.item.component'
 
 @Component({
     selector: 'todo-list',
     template: `
-    <label>Enter New Task<label><input type='text' [(ngModel)]='newTask'><button (click)='add()' type='submit'>Add</button>
     <div>
         <ol>
             <li *ngFor='#item of todoList'>

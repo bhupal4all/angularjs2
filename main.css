@@ -32,12 +32,12 @@ h1 {
     text-align: center;
 }
 
-input .text {
+.text {
     background-color: aliceblue;
     padding: 5px 5px;
 }
 
-button .button {
+.button {
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
@@ -46,4 +46,47 @@ button .button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+}
+
+.nav-bar {
+    height: 50px;
+}
+
+.nav-bar .table {
+    display: table;
+    margin: 0 auto;
+}
+
+.nav, ul {
+    list-style: none;
+    min-width: 500px;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+.nav li {
+    /*display: inline;*/
+    position: relative;
+    float: left;
+    width: 200px;
+}
+
+.nav a {
+    background-color: lightgray;
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.nav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.nav a:hover:not(.active) {
+    background-color: #555;
+    color: white;
 }

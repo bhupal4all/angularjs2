@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from 'angular2/core'
 
 
-import {TodoItem} from './todo.model'
+import {TodoItem} from './../../model/todo.model'
 
 @Component({
     selector: 'todo-list-item',
