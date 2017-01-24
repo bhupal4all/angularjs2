@@ -17,6 +17,7 @@ System.register([], function(exports_1, context_1) {
                 TodoService.prototype.add = function (item) { };
                 TodoService.prototype.remove = function (id) { };
                 TodoService.prototype.getItem = function (id) { return; };
+                TodoService.prototype.update = function (item) { };
                 return TodoService;
             }());
             exports_1("TodoService", TodoService);
@@ -44,6 +45,11 @@ System.register([], function(exports_1, context_1) {
                         }
                     });
                     return foundItem;
+                };
+                TodoServiceMock.prototype.update = function (item) {
+                    var itm = this.getItem(item.id);
+                    itm.title = item.title;
+                    itm.description = item.description;
                 };
                 return TodoServiceMock;
             }(TodoService));

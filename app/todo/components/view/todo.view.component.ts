@@ -7,6 +7,7 @@ import { TodoService } from './../../service/todo.service'
 @Component({
     selector: 'view-todo',
     template: `
+    <button class='button' type='submit' (click)='edit()'>Edit</button>
     <table class='prop-table'>
         <tr>
             <td>Id</td>
@@ -27,7 +28,10 @@ export class ViewTodoComponent {
     item: TodoItem;
     constructor(private rourter: Router, private rParams: RouteParams, private service: TodoService) {
         let id = rParams.params['id'];
-
         this.item = service.getItem(+id);
+    }
+
+    edit() {
+        this.rourter.navigate(['Edit', { id: this.item.id}]);
     }
 }

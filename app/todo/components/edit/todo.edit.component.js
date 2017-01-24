@@ -11,7 +11,7 @@ System.register(['angular2/core', 'angular2/router', './../../service/todo.servi
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, router_1, todo_service_1;
-    var ViewTodoComponent;
+    var EditTodoComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -24,28 +24,30 @@ System.register(['angular2/core', 'angular2/router', './../../service/todo.servi
                 todo_service_1 = todo_service_1_1;
             }],
         execute: function() {
-            ViewTodoComponent = (function () {
-                function ViewTodoComponent(rourter, rParams, service) {
-                    this.rourter = rourter;
-                    this.rParams = rParams;
+            EditTodoComponent = (function () {
+                function EditTodoComponent(service, router, rParms) {
                     this.service = service;
-                    var id = rParams.params['id'];
+                    this.router = router;
+                    this.rParms = rParms;
+                    var id = rParms.params['id'];
                     this.item = service.getItem(+id);
                 }
-                ViewTodoComponent.prototype.edit = function () {
-                    this.rourter.navigate(['Edit', { id: this.item.id }]);
+                EditTodoComponent.prototype.submit = function () {
+                    this.service.update(this.item);
+                    this.router.navigate(['List']);
                 };
-                ViewTodoComponent = __decorate([
+                EditTodoComponent = __decorate([
                     core_1.Component({
-                        selector: 'view-todo',
-                        template: "\n    <button class='button' type='submit' (click)='edit()'>Edit</button>\n    <table class='prop-table'>\n        <tr>\n            <td>Id</td>\n            <td>{{item?.id}}</td>\n        </tr>\n        <tr>\n            <td>Title</td>\n            <td>{{item?.title}}</td>\n        </tr>\n        <tr>\n            <td>Description</td>\n            <td>{{item?.description}}</td>\n        </tr>\n    </table>\n    "
+                        selector: 'todo-edit',
+                        template: "\n    <table class='prop-table'>\n        <tr>\n            <td>Title</td>\n            <td><input type='text' [(ngModel)]='item.title'></td>\n        </tr>\n        <tr>\n            <td>Description</td>\n            <td><textarea [(ngModel)]='item.description'></textarea></td>\n        </tr>\n        <tr>\n            <td colspan='2' class='submit'><button type='submit' class='button' (click)='submit()'>Submit</button></td>\n        </tr>\n    </table>\n    ",
+                        styles: ["\n        .prop-table .submit {\n            text-align: center;\n        }\n        .prop-table .submit button {\n            width: 100px;\n        }\n    "]
                     }), 
-                    __metadata('design:paramtypes', [router_1.Router, router_1.RouteParams, todo_service_1.TodoService])
-                ], ViewTodoComponent);
-                return ViewTodoComponent;
+                    __metadata('design:paramtypes', [todo_service_1.TodoService, router_1.Router, router_1.RouteParams])
+                ], EditTodoComponent);
+                return EditTodoComponent;
             }());
-            exports_1("ViewTodoComponent", ViewTodoComponent);
+            exports_1("EditTodoComponent", EditTodoComponent);
         }
     }
 });
-//# sourceMappingURL=todo.view.component.js.map
+//# sourceMappingURL=todo.edit.component.js.map

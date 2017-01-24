@@ -7,8 +7,5 @@ import { TodoService, TodoServiceMock } from './todo/service/todo.service'
 
 
 bootstrap(AppComponent, [
-    ROUTER_PROVIDERS,
-    provide(LocationStrategy, { useClass: HashLocationStrategy }),
-    provide(APP_BASE_HREF, { useValue: '/' }),
     provide(TodoService, { useClass: TodoServiceMock })
 ]);

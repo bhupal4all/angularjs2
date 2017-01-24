@@ -9,6 +9,7 @@ export class TodoService {
     add(item: TodoItem) { }
     remove(id: number) { }
     getItem(id: number): TodoItem { return; }
+    update(item:TodoItem) {}
 }
 
 export class TodoServiceMock extends TodoService {
@@ -38,5 +39,11 @@ export class TodoServiceMock extends TodoService {
         })
 
         return foundItem;
+    }
+
+    update(item:TodoItem){
+        let itm = this.getItem(item.id);
+        itm.title = item.title;
+        itm.description = item.description;
     }
 }
