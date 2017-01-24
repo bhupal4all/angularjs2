@@ -30,12 +30,17 @@ import { EditTodoComponent } from './todo/components/edit/todo.edit.component'
     {
         path: "/view/:id",
         name: "View",
-        component: ViewTodoComponent
+        component: ViewTodoComponent,
+
     },
     {
-        path: "/edit/:id",
+        path: "/view/:id/edit",
         name: "Edit",
-        component: EditTodoComponent
+        component: EditTodoComponent,
+    },
+    {
+        path:"**",
+        redirectTo: ['List']
     }
 
 ])
