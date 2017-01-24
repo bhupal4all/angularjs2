@@ -38,4 +38,12 @@ bootstrap(AppComponent, [ROUTER_PROVIDERS, provide(APP_BASE_HREF, { useValue: '/
 * This would come becuase, we havent used any specific routing strategy
 * as there is no specific strategy, on restart, request would interprets wrongly
 * instead of navigated path, request would interpret at page request which is not exist
-* To fix this issue, we need to use Location Strategy which is __Hash__
+* To fix this issue, we need to use Location Strategy which is __Hash Location Strategy__
+
+```typescript
+import { ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy } from 'angular2/router'
+bootstrap(AppComponent, [
+    ROUTER_PROVIDERS,
+    provide(LocationStrategy, { useClass: HashLocationStrategy })
+]);
+```

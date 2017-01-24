@@ -1,5 +1,5 @@
-import { Component } from 'angular2/core';
-import { RouteConfig, Router, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
+import { Component, provide } from 'angular2/core';
+import { RouteConfig, Router, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy } from 'angular2/router';
 
 import { TodoListComponent } from './todo/components/list/todo.list.component'
 import { AddTodoComponent } from './todo/components/add/todo.add.component'
@@ -9,7 +9,7 @@ import { ViewTodoComponent } from './todo/components/view/todo.view.component'
     selector: 'todo-app',
     templateUrl: 'app/app.template.html', // With respective to index.html,
     directives: [TodoListComponent, ROUTER_DIRECTIVES],
-    providers: [ROUTER_PROVIDERS]
+    providers: [ROUTER_PROVIDERS, provide(LocationStrategy, { useClass: HashLocationStrategy })]
 })
 @RouteConfig([
     {
