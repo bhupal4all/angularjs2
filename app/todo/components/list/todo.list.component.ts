@@ -1,7 +1,7 @@
 import { Component, provide, Input } from 'angular2/core'
 
 import { TodoItem } from './../../model/todo.model'
-import { TodoService, TodoServiceMock } from './../../service/todo.service'
+import { TodoService } from './../../service/todo.service'
 
 import { ListItemComponet } from './../list-item/todo.list.item.component'
 
@@ -17,8 +17,7 @@ import { ListItemComponet } from './../list-item/todo.list.item.component'
         </ol>
     </div>
     `,
-    directives: [ListItemComponet],
-    providers: [provide(TodoService, { useClass: TodoServiceMock })]
+    directives: [ListItemComponet]
 })
 export class TodoListComponent {
     todoList: TodoItem[] = [];
@@ -28,13 +27,8 @@ export class TodoListComponent {
         this.todoList = service.todoList;
     }
 
-    add() {
-        this.service.add({ title: this.newTask });
-        this.newTask = '';
-    }
-
     removeItem(id: number) {
-        console.log('removing id'+id);
+        console.log('removing id' + id);
         this.service.remove(id);
     }
 }

@@ -30,10 +30,6 @@ System.register(['angular2/core', './../../service/todo.service', './../list-ite
                     this.todoList = [];
                     this.todoList = service.todoList;
                 }
-                TodoListComponent.prototype.add = function () {
-                    this.service.add({ title: this.newTask });
-                    this.newTask = '';
-                };
                 TodoListComponent.prototype.removeItem = function (id) {
                     console.log('removing id' + id);
                     this.service.remove(id);
@@ -42,8 +38,7 @@ System.register(['angular2/core', './../../service/todo.service', './../list-ite
                     core_1.Component({
                         selector: 'todo-list',
                         template: "\n    <div>\n        <ol>\n            <li *ngFor='#item of todoList'>\n                <todo-list-item [item]=\"item\" (remove)=\"removeItem($event)\">\n                </todo-list-item>\n            </li>\n        </ol>\n    </div>\n    ",
-                        directives: [todo_list_item_component_1.ListItemComponet],
-                        providers: [core_1.provide(todo_service_1.TodoService, { useClass: todo_service_1.TodoServiceMock })]
+                        directives: [todo_list_item_component_1.ListItemComponet]
                     }), 
                     __metadata('design:paramtypes', [todo_service_1.TodoService])
                 ], TodoListComponent);
