@@ -3,6 +3,7 @@ import { RouteConfig, Router, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angula
 
 import { TodoListComponent } from './todo/components/list/todo.list.component'
 import { AddTodoComponent } from './todo/components/add/todo.add.component'
+import { ViewTodoComponent } from './todo/components/view/todo.view.component'
 
 @Component({
     selector: 'todo-app',
@@ -20,6 +21,11 @@ import { AddTodoComponent } from './todo/components/add/todo.add.component'
         path: "/add",
         name: "Add",
         component: AddTodoComponent
+    },
+    {
+        path: "/view/:id",
+        name: "View",
+        component: ViewTodoComponent
     }
 
 ])

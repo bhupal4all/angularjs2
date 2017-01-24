@@ -11,7 +11,7 @@ System.register(['angular2/core', 'angular2/router', './../../service/todo.servi
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, router_1, todo_service_1;
-    var AddTodoComponent;
+    var ViewTodoComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -24,26 +24,25 @@ System.register(['angular2/core', 'angular2/router', './../../service/todo.servi
                 todo_service_1 = todo_service_1_1;
             }],
         execute: function() {
-            AddTodoComponent = (function () {
-                function AddTodoComponent(service, router) {
+            ViewTodoComponent = (function () {
+                function ViewTodoComponent(rourter, rParams, service) {
+                    this.rourter = rourter;
+                    this.rParams = rParams;
                     this.service = service;
-                    this.router = router;
+                    var id = rParams.params['id'];
+                    this.item = service.getItem(+id);
                 }
-                AddTodoComponent.prototype.add = function () {
-                    this.service.add({ title: this.newTask });
-                    this.newTask = '';
-                    this.router.navigate(['List']);
-                };
-                AddTodoComponent = __decorate([
+                ViewTodoComponent = __decorate([
                     core_1.Component({
-                        selector: 'add-todo',
-                        template: "\n    <div>\n        <input type='text' class='text' [(ngModel)]='newTask' placeholder='Enter New Task'>\n        <button class='button' (click)='add()' type='submit'>Add</button>\n    </div>\n    " }), 
-                    __metadata('design:paramtypes', [todo_service_1.TodoService, router_1.Router])
-                ], AddTodoComponent);
-                return AddTodoComponent;
+                        selector: 'view-todo',
+                        template: "\n    <table class='prop-table'>\n        <tr>\n            <td>Id</td>\n            <td>{{item?.id}}</td>\n        </tr>\n        <tr>\n            <td>Title</td>\n            <td>{{item?.title}}</td>\n        </tr>\n        <tr>\n            <td>Description</td>\n            <td>{{item?.description}}</td>\n        </tr>\n    </table>\n    "
+                    }), 
+                    __metadata('design:paramtypes', [router_1.Router, router_1.RouteParams, todo_service_1.TodoService])
+                ], ViewTodoComponent);
+                return ViewTodoComponent;
             }());
-            exports_1("AddTodoComponent", AddTodoComponent);
+            exports_1("ViewTodoComponent", ViewTodoComponent);
         }
     }
 });
-//# sourceMappingURL=todo.add.component.js.map
+//# sourceMappingURL=todo.view.component.js.map

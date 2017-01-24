@@ -90,3 +90,30 @@ h1 {
     background-color: #555;
     color: white;
 }
+
+.rounded-button {
+    border: 1px solid gray;
+    border-radius: 50%;
+    color:white;
+    background-color: #4CAF50;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.prop-table, table {
+    border: 1px solid black;
+}
+
+.prop-table tr td {
+    font-weight: normal;
+    background-color: #f1f1f1;
+    width: 150px;
+    text-align: left;
+}
+
+.prop-table tr td:nth-child(1) {
+    font-weight: bold;
+    background-color: aliceblue;
+    width: 150px;
+    text-align: right;
+}

@@ -33,3 +33,9 @@ bootstrap(AppComponent, [ROUTER_PROVIDERS, provide(APP_BASE_HREF, { useValue: '/
 * correct the routing configuration
 * Routes array needs to have `path`, `name` and `component`
 * use name while calling the route at `routerLink`
+
+### Uncaught ReferenceError: System is not defined - when you reload the page from navigated route
+* This would come becuase, we havent used any specific routing strategy
+* as there is no specific strategy, on restart, request would interprets wrongly
+* instead of navigated path, request would interpret at page request which is not exist
+* To fix this issue, we need to use Location Strategy which is __Hash__

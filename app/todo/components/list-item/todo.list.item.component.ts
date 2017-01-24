@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from 'angular2/core'
-
+import {Router} from 'angular2/router'
 
 import {TodoItem} from './../../model/todo.model'
 
@@ -8,7 +8,8 @@ import {TodoItem} from './../../model/todo.model'
     template: `
     <div>
         <span>{{item?.title}}</span>
-        <button type='submit' (click)='clicked()'>[x]</button>
+        <button type='submit' (click)='view()'>View</button>
+        <button class='rounded-button' type='submit' (click)='delete()'>x</button>
     </div>
     `
 })
@@ -16,10 +17,14 @@ export class ListItemComponet {
     @Input() item: TodoItem;
     @Output() remove = new EventEmitter();
 
-    constructor() {
+    constructor(private router: Router) {
     }
 
-    clicked() {
+    delete() {
         this.remove.emit(this.item.id);
+    }
+
+    view(){
+        this.router.navigate(['View', {id: this.item.id}]);
     }
 }
