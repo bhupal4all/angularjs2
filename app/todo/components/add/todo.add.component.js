@@ -37,7 +37,7 @@ System.register(['angular2/core', 'angular2/router', './../../service/todo.servi
                 AddTodoComponent = __decorate([
                     core_1.Component({
                         selector: 'add-todo',
-                        template: "\n    <div>\n        <input type='text' class='text' [(ngModel)]='newTask' placeholder='Enter New Task'>\n        <button class='button' (click)='add()' type='submit'>Add</button>\n    </div>\n    " }), 
+                        template: "\n    <div>\n        <input type='text' class='text' [(ngModel)]='newTask' placeholder='Enter New Task'(keyUp.enter)='add()'>\n        <button class='button' (click)='add()' type='submit'>Add</button>\n    </div>\n    " }), 
                     __metadata('design:paramtypes', [todo_service_1.TodoService, router_1.Router])
                 ], AddTodoComponent);
                 return AddTodoComponent;

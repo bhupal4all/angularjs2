@@ -7,7 +7,7 @@ import { TodoService } from './../../service/todo.service'
     selector: 'add-todo',
     template: `
     <div>
-        <input type='text' class='text' [(ngModel)]='newTask' placeholder='Enter New Task'>
+        <input type='text' class='text' [(ngModel)]='newTask' placeholder='Enter New Task'(keyUp.enter)='add()'>
         <button class='button' (click)='add()' type='submit'>Add</button>
     </div>
     `})
