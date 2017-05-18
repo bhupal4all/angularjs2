@@ -32,6 +32,6 @@ export class ViewTodoComponent {
     }
 
     edit() {
-        this.rourter.navigate(['Edit', {id: 1}]);
+        this.rourter.navigate(['Edit', {id: this.item.id}]);
     }
 }

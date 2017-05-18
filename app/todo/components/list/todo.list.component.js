@@ -30,9 +30,8 @@ System.register(['angular2/core', './../../service/todo.service', './../list-ite
                     this.todoList = [];
                     this.todoList = service.todoList;
                 }
-                TodoListComponent.prototype.removeItem = function (id) {
-                    console.log('removing id' + id);
-                    this.service.remove(id);
+                TodoListComponent.prototype.removeItem = function (item) {
+                    this.service.remove(item);
                 };
                 TodoListComponent = __decorate([
                     core_1.Component({

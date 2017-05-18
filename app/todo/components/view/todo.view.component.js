@@ -33,7 +33,7 @@ System.register(['angular2/core', 'angular2/router', './../../service/todo.servi
                     this.item = service.getItem(+id);
                 }
                 ViewTodoComponent.prototype.edit = function () {
-                    this.rourter.navigate(['Edit', { id: 1 }]);
+                    this.rourter.navigate(['Edit', { id: this.item.id }]);
                 };
                 ViewTodoComponent = __decorate([
                     core_1.Component({

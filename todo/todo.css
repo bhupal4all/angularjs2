@@ -1,0 +1,15 @@
+h1 {
+  text-align: center;
+  font-size: bold; }
+  h1:hover {
+    background-color: yellow; }
+
+h2 {
+  background-color: darkgray;
+  color: white; }
+  h2.custom {
+    text-align: center;
+    background-color: orange;
+    color: lightgreen; }
+    h2.custom:hover {
+      font-size: 40px; }

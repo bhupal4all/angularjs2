@@ -15,7 +15,7 @@ System.register([], function(exports_1, context_1) {
                     this.todoList = [];
                 }
                 TodoService.prototype.add = function (item) { };
-                TodoService.prototype.remove = function (id) { };
+                TodoService.prototype.remove = function (item) { };
                 TodoService.prototype.getItem = function (id) { return; };
                 TodoService.prototype.update = function (item) { };
                 return TodoService;
@@ -32,8 +32,11 @@ System.register([], function(exports_1, context_1) {
                     item.id = this.todoList.length + 1;
                     this.todoList.push(item);
                 };
-                TodoServiceMock.prototype.remove = function (id) {
-                    console.log('removing at server');
+                TodoServiceMock.prototype.remove = function (item) {
+                    var idx = this.todoList.indexOf(item);
+                    if (idx > -1) {
+                        this.todoList.splice(idx, 1);
+                    }
                 };
                 TodoServiceMock.prototype.getItem = function (id) {
                     var found = false;

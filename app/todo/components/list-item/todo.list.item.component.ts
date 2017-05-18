@@ -7,9 +7,10 @@ import {TodoItem} from './../../model/todo.model'
     selector: 'todo-list-item',
     template: `
     <div>
-        <span>{{item?.title}}</span>
+        <span><strong>Title: </strong>{{item?.title}}</span>
         <button type='submit' (click)='view()'>View</button>
         <button class='rounded-button' type='submit' (click)='delete()'>x</button>
+        <span *ngIf='item?.description'><br/><strong>Desc: </strong>{{item?.description}}</span>
     </div>
     `
 })
@@ -21,7 +22,7 @@ export class ListItemComponet {
     }
 
     delete() {
-        this.remove.emit(this.item.id);
+        this.remove.emit(this.item);
     }
 
     view(){

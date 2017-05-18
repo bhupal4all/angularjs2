@@ -27,8 +27,7 @@ export class TodoListComponent {
         this.todoList = service.todoList;
     }
 
-    removeItem(id: number) {
-        console.log('removing id' + id);
-        this.service.remove(id);
+    removeItem(item: TodoItem) {
+        this.service.remove(item);
     }
 }

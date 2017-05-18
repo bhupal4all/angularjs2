@@ -27,7 +27,7 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                     this.remove = new core_1.EventEmitter();
                 }
                 ListItemComponet.prototype.delete = function () {
-                    this.remove.emit(this.item.id);
+                    this.remove.emit(this.item);
                 };
                 ListItemComponet.prototype.view = function () {
                     this.router.navigate(['View', { id: this.item.id }]);
@@ -43,7 +43,7 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                 ListItemComponet = __decorate([
                     core_1.Component({
                         selector: 'todo-list-item',
-                        template: "\n    <div>\n        <span>{{item?.title}}</span>\n        <button type='submit' (click)='view()'>View</button>\n        <button class='rounded-button' type='submit' (click)='delete()'>x</button>\n    </div>\n    "
+                        template: "\n    <div>\n        <span><strong>Title: </strong>{{item?.title}}</span>\n        <button type='submit' (click)='view()'>View</button>\n        <button class='rounded-button' type='submit' (click)='delete()'>x</button>\n        <span *ngIf='item?.description'><br/><strong>Desc: </strong>{{item?.description}}</span>\n    </div>\n    "
                     }), 
                     __metadata('design:paramtypes', [router_1.Router])
                 ], ListItemComponet);

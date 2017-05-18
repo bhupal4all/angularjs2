@@ -7,7 +7,7 @@ export class TodoService {
     todoList: Array<TodoItem> = [];
 
     add(item: TodoItem) { }
-    remove(id: number) { }
+    remove(item: TodoItem) { }
     getItem(id: number): TodoItem { return; }
     update(item:TodoItem) {}
 }
@@ -24,8 +24,11 @@ export class TodoServiceMock extends TodoService {
         this.todoList.push(item);
     }
 
-    remove(id: number) {
-        console.log('removing at server');
+    remove(item: TodoItem) {
+        let idx = this.todoList.indexOf(item);
+        if (idx > -1) {
+            this.todoList.splice(idx, 1);
+        }
     }
 
     getItem(id: number): TodoItem {
