@@ -1,7 +1,6 @@
 {
   "name": "angular2-quickstart",
   "version": "1.0.0",
-  "main": "app.js",
   "scripts": {
     "start": "concurrent \"npm run tsc:w\" \"npm run lite\" ",
     "tsc": "tsc",
