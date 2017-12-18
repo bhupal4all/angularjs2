@@ -8,7 +8,7 @@
     "tsc:w": "tsc -w",
     "lite": "lite-server",
     "typings": "typings",
-    "postinstall": "ng build -aot --prod",
+    "postinstall": "npm run build -aot --prod",
     "build:sass": "node-sass --output . --recursive .",
     "watch:sass": "node-sass --output . --recursive --watch ."
 
