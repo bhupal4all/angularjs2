@@ -1,17 +1,22 @@
 {
   "name": "angular2-quickstart",
   "version": "1.0.0",
+  "main": "app.js"
   "scripts": {
     "start": "concurrent \"npm run tsc:w\" \"npm run lite\" ",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "lite": "lite-server",
     "typings": "typings",
-    "postinstall": "typings install",
+    "postinstall": "typings install && ng build -aot --prod",
     "build:sass": "node-sass --output . --recursive .",
     "watch:sass": "node-sass --output . --recursive --watch ."
 
   },
+"engines" {
+  "node":"~6.10.3",
+  "npm":"~3.10.5"
+},
   "license": "ISC",
   "dependencies": {
     "angular2": "2.0.0-beta.7",
