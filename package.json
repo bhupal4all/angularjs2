@@ -9,8 +9,8 @@
     "lite": "lite-server",
     "typings": "typings",
     "build:sass": "node-sass --output . --recursive .",
-    "watch:sass": "node-sass --output . --recursive --watch ."
-
+    "watch:sass": "node-sass --output . --recursive --watch .",
+    "postinstall":"npm start"
   },
 "engines": {
   "node":"~6.10.3",
