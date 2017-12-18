@@ -13,7 +13,7 @@
     "watch:sass": "node-sass --output . --recursive --watch ."
 
   },
-"engines" {
+"engines": {
   "node":"~6.10.3",
   "npm":"~3.10.5"
 },
