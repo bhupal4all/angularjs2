@@ -14,7 +14,12 @@
   },
 "engines": {
   "node":"~6.10.3",
-  "npm":"~3.10.5"
+  "npm":"~3.10.5",
+      "concurrently": "^2.0.0",
+    "lite-server": "^2.1.0",
+    "node-sass": "^4.3.0",
+    "typescript": "^1.7.5",
+    "typings": "^2.1.0"
 },
   "license": "ISC",
   "dependencies": {
