@@ -2,7 +2,7 @@
   "name": "angular2-quickstart",
   "version": "1.0.0",
   "scripts": {
-    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" ",
+    "start": "node server.js",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "lite": "lite-server",
@@ -10,11 +10,7 @@
     "build:sass": "node-sass --output . --recursive .",
     "watch:sass": "node-sass --output . --recursive --watch .",
     "postinstall":"npm build"
-  },
-  "scripts": {
-  "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
-  "heroku-postbuild": "echo This runs afterwards."
-},
+  }
 "engines": {
   "node":"~6.10.3",
   "npm":"~3.10.5"
