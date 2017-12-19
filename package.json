@@ -30,7 +30,7 @@
     "node-sass": "^4.3.0",
     "typescript": "^1.7.5",
     "typings": "^2.1.0",
-    "@angular/compiler-cli": "^2.4.0"
+    "compiler-cli": "^2.4.0"
   },
   "devDependencies": {
     "concurrently": "^2.0.0",
