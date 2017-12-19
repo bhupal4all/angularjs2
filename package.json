@@ -9,7 +9,7 @@
     "typings": "typings",
     "build:sass": "node-sass --output . --recursive .",
     "watch:sass": "node-sass --output . --recursive --watch .",
-    "postinstall":"npm build --aot --target=production"
+    "postinstall":"ng build"
   },
 "engines": {
   "node":"~6.10.3",
@@ -29,7 +29,8 @@
     "lite-server": "^2.1.0",
     "node-sass": "^4.3.0",
     "typescript": "^1.7.5",
-    "typings": "^2.1.0"
+    "typings": "^2.1.0",
+    "@angular/compiler-cli": "^2.4.0"
   },
   "devDependencies": {
     "concurrently": "^2.0.0",
